@@ -23,7 +23,7 @@ describe('landing page', () => {
 
   it('shows the role and the summary', () => {
     cy.contains('Frontend Developer').should('be.visible');
-    cy.contains('6 years of experience').should('be.visible');
+    cy.contains('7 years of experience').should('be.visible');
   });
 
   it('lists all four employers and the mentoring entry', () => {
@@ -34,7 +34,7 @@ describe('landing page', () => {
   });
 
   it('renders skill meters with resolved values', () => {
-    cy.get('[role="meter"]').should('have.length', 6);
+    cy.get('[role="meter"]').should('have.length', 8);
     cy.get('[role="meter"]').each(($meter) => {
       const value = Number($meter.attr('aria-valuenow'));
       expect(value).to.be.within(0, 100);

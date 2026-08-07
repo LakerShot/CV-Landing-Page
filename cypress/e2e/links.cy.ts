@@ -18,7 +18,7 @@ describe('links and downloads', () => {
   it('exposes the email as a mailto link', () => {
     cy.get('a[href^="mailto:"]')
       .first()
-      .should('have.attr', 'href', 'mailto:KrisKyle4130@gmail.com');
+      .should('have.attr', 'href', 'mailto:egormorozdev@outlook.com');
   });
 
   it('offers the CV as a download', () => {

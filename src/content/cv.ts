@@ -16,7 +16,7 @@ export const PROFILE = {
   /** Displayed as-is, matching the source résumé. */
   dateOfBirthDisplay: '06/05/2000',
   yearsOfExperience: 7,
-  email: 'KrisKyle4130@gmail.com',
+  email: 'egormorozdev@outlook.com',
   cvFile: '/Egor_Morozov_CV.pdf',
   avatar: '/avatar.jpg',
   avatarMask: '/avatar-mask.png',
@@ -72,7 +72,9 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
   { id: 'vue', label: 'Vue 3', level: 92 },
   { id: 'angular', label: 'Angular', level: 67 },
   { id: 'bundlers', label: 'Vite / Webpack', level: 95 },
-  { id: 'devops', label: 'CI/CD / Docker / Testing', level: 84 },
+  { id: 'devops', label: 'CI/CD / Docker / K8s', level: 84 },
+  { id: 'testing', label: 'Testing / Vitest / Cypress / Playwright', level: 88 },
+  { id: 'backend', label: 'Node.js / MongoDB / PostgreSQL', level: 62 },
 ] as const;
 
 /** The secondary tech list from the résumé's bordered box. */
@@ -83,6 +85,14 @@ export const TECH_TAGS: readonly string[] = [
   'Sentry',
   'Cypress',
   'Istio',
+  'Kafka',
+  'Splunk',
+  'AWS',
+  'Blue/Green Deployment',
+  'Feature Toggles',
+  'Claude Code',
+  'Claude Design',
+  'Codex',
   'Prometheus',
   'Strapi',
   'ELK stack',
@@ -129,6 +139,12 @@ export type WorkTag = {
 export type ExperienceItem = {
   id: string;
   company: string;
+  website?: string;
+  websiteUnavailable?: boolean;
+  media?: {
+    src: string;
+    type: string;
+  };
   tags: readonly WorkTag[];
   /** ISO start date, used only for ordering and machine-readable markup. */
   start: string;
@@ -141,6 +157,11 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   {
     id: 'salmon',
     company: 'Salmon',
+    website: 'https://salmon.ph',
+    media: {
+      src: '/videos/salmon-redesign.mov',
+      type: 'video/quicktime',
+    },
     tags: [
       { label: 'React', tone: 'react' },
       { label: 'Now', tone: 'gold' },
@@ -153,6 +174,7 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   {
     id: 'reelmotion',
     company: 'Reelmotion Games',
+    website: 'http://reelmotion.games/',
     tags: [
       { label: 'Vue', tone: 'vue' },
       { label: 'BTC', tone: 'neutral' },
@@ -163,6 +185,7 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   {
     id: 'crimtan',
     company: 'Crimtan',
+    website: 'https://crimtan.com/',
     tags: [
       { label: 'Angular', tone: 'angular' },
       { label: 'B2B', tone: 'neutral' },
@@ -173,6 +196,7 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   {
     id: 'javaMentor',
     company: 'Java Mentor',
+    websiteUnavailable: true,
     tags: [
       { label: 'React', tone: 'react' },
       { label: 'Education', tone: 'neutral' },

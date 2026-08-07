@@ -56,11 +56,14 @@ export function Experience() {
             <TimelineItem
               key={job.id}
               title={job.company}
+              titleHref={job.website}
+              titleNote={job.websiteUnavailable ? t('companyUnavailable') : undefined}
               subtitle={t(`items.${job.id}.role`)}
               location={t(`items.${job.id}.location`)}
               meta={`${t(`items.${job.id}.arrangement`)} · ${t(`items.${job.id}.duration`)}`}
               description={t(`items.${job.id}.description`)}
               tags={job.tags}
+              media={job.media}
               current={job.current}
             />
           ))}

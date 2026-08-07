@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Egor Morozov — Frontend Developer",
-    "description": "Frontend developer with 7 years of experience in React, TypeScript, Next.js, Vue and Angular. Owning system design and delivery from product requirements to CI/CD and production monitoring.",
+    "description": "Frontend developer with 7 years of experience in React, TypeScript, Next.js, Vue, Angular and modern AI-assisted delivery. Owning system design and delivery from product requirements to CI/CD and production monitoring.",
     "ogTagline": "Frontend Developer · 7 years of experience"
   },
   "nav": {
@@ -18,7 +18,7 @@
   },
   "hero": {
     "role": "Frontend Developer",
-    "summary": "With <b>{years} years of experience</b>, I drive technical decision-making and take full ownership of system design and delivery, from translating product requirements into solutions to CI/CD pipelines and production monitoring.",
+    "summary": "With <b>{years} years of experience</b>, I drive technical decision-making and take full ownership of system design and delivery, from product requirements to CI/CD, monitoring and AI-assisted delivery with agents, RALF cycles and fast design-to-code iterations.",
     "dobLabel": "Date of birth",
     "emailLabel": "Email",
     "linksLabel": "Links",
@@ -35,11 +35,13 @@
     "kicker": "What I work with",
     "title": "Skills",
     "alsoTitle": "Also in the toolbox",
+    "aiNote": "Deeply comfortable with AI-assisted engineering: Codex, Claude Code, agent workflows, RALF cycles, review loops and design-to-code iteration. I use these tools as engineering leverage, not as a substitute for architecture.",
     "levelLabel": "{label}: {level} out of 100"
   },
   "experience": {
     "kicker": "Where I have worked",
     "title": "Experience",
+    "companyUnavailable": "company no longer exists",
     "present": "present",
     "durationSuffix": "",
     "items": {
@@ -48,21 +50,21 @@
         "arrangement": "Hybrid · Full-time",
         "duration": "3 years 2 months — present",
         "role": "Frontend Developer",
-        "description": "Built a loan application from scratch. Migrated a large news portal from Tilda to a custom solution using Strapi and Next.js. Designed the CMS architecture and reusable content blocks. Improved key business metrics through performance optimizations, including Redis-based request caching (SLA ~99.9%). Built a scalable UI Kit based on MUI components, documented in Storybook and covered with unit and visual regression tests. Extended Strapi core functionality by developing custom plugins (view-preview-block, reset-web-cache, duplicate-block-content), improving editorial workflows and system maintainability."
+        "description": "Built a loan application from scratch. Made a major contribution to the Salmon portal redesigns 1.5 and 2.0, visible on the homepage and product landing pages. Worked closely with stakeholders and multiple designers to shape a CMS architecture with reusable blocks, making it easier to assemble product pages. Improved business metrics through performance work, including Redis request caching (SLA ~99.9%). Developed a debug page for finding blocks, analytics events, network requests, GitOps keys and integrations from analytics to Kafka and Redis. Built a scalable MUI-based UI Kit, documented it in Storybook and extended Strapi with custom plugins."
       },
       "reelmotion": {
         "location": "Bangkok, Thailand",
         "arrangement": "On-site · Full-time",
         "duration": "1 year 3 months",
         "role": "Frontend Developer",
-        "description": "Combined hands-on development with technical leadership, building complex UI components, ensuring payment system reliability via unit and E2E tests, and improving Lighthouse performance scores from 68 to 93."
+        "description": "Developed a client betting platform where users could place real-time bets and watch event outcomes live. Integrated payment flows from banking providers to crypto, built complex UI components, protected payment reliability with unit and E2E tests, and improved Lighthouse performance scores from 68 to 93."
       },
       "crimtan": {
         "location": "London, United Kingdom",
         "arrangement": "Remote · Full-time",
         "duration": "9 months",
         "role": "Frontend Developer",
-        "description": "Migrated core functionality from AngularJS to Angular (2+). Improved backend form engine typing and optimized tree path resolution, significantly increasing stability and availability, with 1.5x performance improvements confirmed under stress testing."
+        "description": "First deep experience working with an international team: the products, documentation and day-to-day communication were in English. Migrated core functionality from AngularJS to Angular (2+). Improved backend form engine typing and optimized tree path resolution, significantly increasing stability and availability, with 1.5x performance improvements confirmed under stress testing."
       },
       "javaMentor": {
         "location": "Batumi, Georgia",
@@ -107,7 +109,7 @@
   "contact": {
     "kicker": "Say hello",
     "title": "Let's build something",
-    "lead": "I am open to frontend and tech-lead roles. The fastest way to reach me is email or Telegram — I usually reply within a day.",
+    "lead": "I am open to frontend developer, tech lead and fullstack developer roles. The fastest way to reach me is email or Telegram — I usually reply within a day.",
     "emailCta": "Write me an email",
     "downloadCta": "Download CV (PDF)",
     "socialsTitle": "Elsewhere",

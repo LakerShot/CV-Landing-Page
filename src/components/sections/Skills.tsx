@@ -26,6 +26,13 @@ export function Skills() {
           ))}
         </div>
 
+        <p
+          data-reveal-child
+          className="mt-10 max-w-[68ch] text-fluid-sm leading-relaxed text-ink-muted md:mt-12"
+        >
+          {t('aiNote')}
+        </p>
+
         {/* Secondary toolbox */}
         <div className="mt-16 md:mt-20">
           <h3

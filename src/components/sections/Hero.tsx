@@ -184,14 +184,9 @@ export function Hero() {
           {/* --- Portrait --- */}
           <div className="order-1 lg:order-2">
             <div className="relative mx-auto w-full max-w-[17rem] sm:max-w-[20rem] lg:max-w-none xl:max-w-[26rem]">
-              {/* Arch frame sitting behind the cut-out */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-[6%] top-[14%] bottom-[4%] rounded-t-full rounded-b-[2.5rem] border border-gold/25 bg-gradient-to-b from-gold/12 via-surface/50 to-transparent"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-[18%] top-[26%] h-[46%] rounded-full bg-gold/10 blur-3xl"
+                className="absolute inset-x-[18%] top-[26%] h-[46%] rounded-full bg-gold/8 blur-3xl"
               />
 
               {/*
@@ -232,14 +227,14 @@ export function Hero() {
         {/* --- Stats --- */}
         <dl
           data-hero-fade
-          className="mt-14 grid grid-cols-3 gap-4 border-t border-hairline pt-8 md:mt-20 md:gap-8"
+          className="mx-auto mt-14 grid max-w-4xl grid-cols-3 gap-4 border-t border-hairline pt-8 text-center md:mt-20 md:gap-8"
         >
           {stats.map((stat) => (
-            <div key={stat.key}>
+            <div key={stat.key} className="flex flex-col items-center">
               <dd className="font-display text-fluid-2xl font-bold text-gold tabular-nums">
                 {stat.value}
               </dd>
-              <dt className="mt-1 text-fluid-xs leading-tight tracking-[0.1em] text-ink-faint uppercase">
+              <dt className="mt-1 max-w-[11rem] text-fluid-xs leading-tight tracking-[0.1em] text-ink-faint uppercase">
                 {stat.label}
               </dt>
             </div>
