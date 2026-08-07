@@ -236,6 +236,7 @@ export const MENTORING: readonly ExperienceItem[] = [
   {
     id: 'kata',
     company: 'Kata Academy',
+    website: 'https://kata.academy/',
     media: {
       kind: 'image',
       src: '/images/kata.webp',

@@ -20,6 +20,7 @@ export function Mentoring() {
             <TimelineItem
               key={item.id}
               title={item.company}
+              titleHref={item.website}
               subtitle={t(`items.${item.id}.role`)}
               location={t(`items.${item.id}.location`)}
               meta={`${t(`items.${item.id}.arrangement`)} · ${t(`items.${item.id}.duration`)}`}
