@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# generated from info.pdf by `npm run extract:avatar`
+public/avatar.jpg
+public/avatar-mask.png
+public/Egor_Morozov_CV.pdf
+
+# testing
+coverage/
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# misc
+.DS_Store
+*.pem
+.env*
+!.env.example
+next-env.d.ts
+.vercel
+tsconfig.tsbuildinfo
+*.tsbuildinfo

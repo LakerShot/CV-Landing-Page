@@ -1,0 +1,76 @@
+{
+  "name": "egor-morozov-cv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated bilingual CV landing page for Egor Morozov, Frontend Developer",
+  "scripts": {
+    "predev": "node scripts/extract-avatar.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/extract-avatar.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "start-server-and-test start http://localhost:3000 \"cypress run\"",
+    "test:e2e:open": "start-server-and-test dev http://localhost:3000 \"cypress open\"",
+    "extract:avatar": "node scripts/extract-avatar.mjs",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.0",
+    "clsx": "^2.1.0",
+    "gsap": "^3.13.0",
+    "lenis": "^1.1.0",
+    "lucide-react": ">=0.400.0",
+    "next": "^15.3.0",
+    "next-intl": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "tailwind-merge": ">=2.5.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": ">=4.3.0",
+    "cypress": ">=13.17.0",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^15.3.0",
+    "eslint-config-prettier": ">=9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "husky": "^9.1.0",
+    "jsdom": ">=25.0.0",
+    "lint-staged": ">=15.4.0",
+    "prettier": "^3.4.0",
+    "prettier-plugin-tailwindcss": ">=0.6.0",
+    "start-server-and-test": "^2.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.20.0",
+    "vitest": ">=2.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mjs,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

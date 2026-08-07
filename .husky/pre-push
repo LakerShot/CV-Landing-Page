@@ -1,0 +1,3 @@
+# Types and unit tests are fast; the e2e suite is left to CI.
+npm run typecheck
+npm run test:unit

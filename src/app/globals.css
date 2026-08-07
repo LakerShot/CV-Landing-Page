@@ -1,0 +1,265 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design tokens — "Dark Editorial + Gold"
+   Palette is derived from the source résumé: gold accent on near-black canvas.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Surfaces */
+  --color-canvas: #0b0b0d;
+  --color-surface: #16161a;
+  --color-surface-2: #1d1d22;
+  --color-hairline: #26262b;
+
+  /* Text */
+  --color-ink: #f2f2f3;
+  --color-ink-muted: #9a9aa2;
+  --color-ink-faint: #6a6a72;
+
+  /* Accent — #C9A227 on #0B0B0D is ~8:1 contrast (AAA for large text, AA body) */
+  --color-gold: #c9a227;
+  --color-gold-bright: #e4c05a;
+  --color-gold-deep: #8a6f18;
+
+  /* Breakpoints: base styles target 360px, then the widths from the brief */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1600px;
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
+
+  /*
+   * Typography — wired to next/font in layout.tsx.
+   * Outfit ships Latin only, so Cyrillic headings on /ru would otherwise land on
+   * whatever `system-ui` happens to be. Manrope carries a Cyrillic subset and
+   * sits next in the stack, keeping Russian headings consistent across
+   * platforms instead of platform-dependent.
+   */
+  --font-display: var(--font-outfit), var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid type scale: readable at 360px, commanding at 2560px */
+  --text-fluid-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+  --text-fluid-sm: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --text-fluid-base: clamp(1rem, 0.95rem + 0.25vw, 1.175rem);
+  --text-fluid-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.5rem);
+  --text-fluid-xl: clamp(1.375rem, 1.2rem + 0.8vw, 2rem);
+  --text-fluid-2xl: clamp(1.75rem, 1.4rem + 1.5vw, 3rem);
+  --text-fluid-3xl: clamp(2.25rem, 1.6rem + 3vw, 4.5rem);
+  /* Capped so "MOROZOV" still fits the hero's grid column at every width. */
+  --text-fluid-hero: clamp(2.5rem, 1rem + 6.4vw, 7.5rem);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    /* Lenis drives scrolling; this is the no-JS / reduced-motion fallback. */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-fluid-base);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Guard the 360px floor: nothing may cause a horizontal scrollbar. */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-canvas);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Anchor navigation must not tuck section headings under the fixed header. */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  /*
+   * Animated elements start hidden so there is no flash of finished layout
+   * before GSAP takes over. This is gated behind `.js`, which an inline script
+   * in the document head adds before first paint — so with JavaScript disabled
+   * or broken the content simply stays visible.
+   */
+  .js [data-reveal],
+  .js [data-reveal-child],
+  .js [data-hero-fade],
+  .js [data-hero-portrait] {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 40rem;
+
+  @media (width >= 768px) {
+    padding-inline: 2.5rem;
+    max-width: 48rem;
+  }
+  @media (width >= 1024px) {
+    max-width: 64rem;
+  }
+  @media (width >= 1440px) {
+    padding-inline: 4rem;
+    max-width: 80rem;
+  }
+  @media (width >= 1600px) {
+    max-width: 90rem;
+  }
+  @media (width >= 1920px) {
+    max-width: 100rem;
+  }
+  @media (width >= 2560px) {
+    padding-inline: 6rem;
+    max-width: 120rem;
+  }
+}
+
+/* Gold gradient text used for accented words in headings. */
+@utility text-gold-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-gold) 0%,
+    var(--color-gold-bright) 50%,
+    var(--color-gold) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hairline card surface used by experience / education / mentoring items. */
+@utility card-surface {
+  background-color: color-mix(in oklab, var(--color-surface) 85%, transparent);
+  border: 1px solid var(--color-hairline);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
+/*
+ * Wrapper for SplitText character reveals: characters animate up from behind
+ * this clipped edge. `overflow: hidden` must live on the line, not the char.
+ */
+@utility split-mask {
+  overflow: hidden;
+  display: block;
+  padding-block: 0.06em;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion preferences — the reduced-motion path must leave content fully usable
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /*
+   * Elements start hidden so GSAP can reveal them. When motion is reduced the
+   * timelines never run, so force the finished state instead.
+   */
+  [data-reveal],
+  [data-reveal-child],
+  [data-hero-fade],
+  [data-hero-portrait] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Print — recruiters do print these pages
+--------------------------------------------------------------------------- */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    overflow: visible;
+  }
+
+  [data-print-hidden] {
+    display: none !important;
+  }
+
+  [data-reveal],
+  [data-reveal-child],
+  [data-hero-fade],
+  [data-hero-portrait] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

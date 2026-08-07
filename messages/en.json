@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Egor Morozov — Frontend Developer",
+    "description": "Frontend developer with 6 years of experience in React, TypeScript, Next.js, Vue and Angular. Owning system design and delivery from product requirements to CI/CD and production monitoring.",
+    "ogTagline": "Frontend Developer · 6 years of experience"
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "mentoring": "Mentoring",
+    "education": "Education",
+    "contact": "Contact",
+    "primaryLabel": "Sections",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "role": "Frontend Developer",
+    "summary": "With <b>{years} years of experience</b>, I drive technical decision-making and take full ownership of system design and delivery, from translating product requirements into solutions to CI/CD pipelines and production monitoring.",
+    "dobLabel": "Date of birth",
+    "emailLabel": "Email",
+    "linksLabel": "Links",
+    "downloadCv": "Download CV",
+    "getInTouch": "Get in touch",
+    "scrollHint": "Scroll",
+    "stats": {
+      "years": "Years of experience",
+      "companies": "Companies shipped for",
+      "countries": "Countries worked in"
+    }
+  },
+  "skills": {
+    "kicker": "What I work with",
+    "title": "Skills",
+    "alsoTitle": "Also in the toolbox",
+    "levelLabel": "{label}: {level} out of 100"
+  },
+  "experience": {
+    "kicker": "Where I have worked",
+    "title": "Experience",
+    "present": "present",
+    "durationSuffix": "",
+    "items": {
+      "salmon": {
+        "location": "Manila, Philippines",
+        "arrangement": "Hybrid · Full-time",
+        "duration": "3 years 2 months — present",
+        "role": "Frontend Developer",
+        "description": "Built a loan application from scratch. Migrated a large news portal from Tilda to a custom solution using Strapi and Next.js. Designed the CMS architecture and reusable content blocks. Improved key business metrics through performance optimizations, including Redis-based request caching (SLA ~99.9%). Built a scalable UI Kit based on MUI components, documented in Storybook and covered with unit and visual regression tests. Extended Strapi core functionality by developing custom plugins (view-preview-block, reset-web-cache, duplicate-block-content), improving editorial workflows and system maintainability."
+      },
+      "reelmotion": {
+        "location": "Bangkok, Thailand",
+        "arrangement": "On-site · Full-time",
+        "duration": "1 year 3 months",
+        "role": "Frontend Developer",
+        "description": "Combined hands-on development with technical leadership, building complex UI components, ensuring payment system reliability via unit and E2E tests, and improving Lighthouse performance scores from 68 to 93."
+      },
+      "crimtan": {
+        "location": "London, United Kingdom",
+        "arrangement": "Remote · Full-time",
+        "duration": "9 months",
+        "role": "Frontend Developer",
+        "description": "Migrated core functionality from AngularJS to Angular (2+). Improved backend form engine typing and optimized tree path resolution, significantly increasing stability and availability, with 1.5x performance improvements confirmed under stress testing."
+      },
+      "javaMentor": {
+        "location": "Batumi, Georgia",
+        "arrangement": "Remote · Full-time",
+        "duration": "2 years",
+        "role": "Frontend Developer",
+        "description": "Engineered a web application for IT education with a strong focus on usability and performance. Cut bundle size by half and improved TTI by 20%. Designed a modular modal factory leveraging React Portal and independent widgets. Supported role-based platform features and migrated legacy JavaScript code to TypeScript."
+      }
+    }
+  },
+  "mentoring": {
+    "kicker": "Giving back",
+    "title": "Mentoring",
+    "items": {
+      "kata": {
+        "location": "St Petersburg, Russia",
+        "arrangement": "Remote · Part-time",
+        "duration": "2 years",
+        "role": "Mentor",
+        "description": "Led and scaled mentorship for hundreds of students, conducting in-depth code reviews and regular 1-on-1 sessions. Guided learners through their full educational journey, advising on modern web development practices and helping design effective, individualized learning plans."
+      }
+    }
+  },
+  "education": {
+    "kicker": "Background",
+    "title": "Education",
+    "items": {
+      "apm": {
+        "period": "September 2024 — June 2029",
+        "note": "In absentia",
+        "location": "Moscow, Russia",
+        "description": "Bachelor's degree, higher education — information systems and technology."
+      },
+      "kotin": {
+        "period": "September 2016 — July 2020",
+        "note": "",
+        "location": "St Petersburg, Russia",
+        "description": "Secondary education — engineering technology / mechanical engineering."
+      }
+    }
+  },
+  "contact": {
+    "kicker": "Say hello",
+    "title": "Let's build something",
+    "lead": "I am open to frontend and tech-lead roles. The fastest way to reach me is email or Telegram — I usually reply within a day.",
+    "emailCta": "Write me an email",
+    "downloadCta": "Download CV (PDF)",
+    "socialsTitle": "Elsewhere",
+    "backToTop": "Back to top"
+  },
+  "footer": {
+    "rights": "Egor Morozov. All rights reserved.",
+    "builtWith": "Built with Next.js, Tailwind CSS and GSAP."
+  },
+  "a11y": {
+    "languageSwitcher": "Change language",
+    "switchTo": "Switch to {language}",
+    "portraitAlt": "Portrait of Egor Morozov",
+    "currentLanguage": "Current language: {language}",
+    "scrollProgress": "Reading progress"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "That page does not exist. Let's get you back to the CV.",
+    "back": "Back to home"
+  }
+}
