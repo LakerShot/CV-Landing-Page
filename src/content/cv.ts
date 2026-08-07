@@ -15,7 +15,7 @@ export const PROFILE = {
   dateOfBirth: '2000-05-06',
   /** Displayed as-is, matching the source résumé. */
   dateOfBirthDisplay: '06/05/2000',
-  yearsOfExperience: 6,
+  yearsOfExperience: 7,
   email: 'KrisKyle4130@gmail.com',
   cvFile: '/Egor_Morozov_CV.pdf',
   avatar: '/avatar.jpg',
