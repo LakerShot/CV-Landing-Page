@@ -26,9 +26,9 @@ npm install
 npm run dev          # http://localhost:3000 → redirects to /en
 ```
 
-`predev` and `prebuild` run `scripts/extract-avatar.mjs`, which pulls the
-portrait and the CV PDF out of `info.pdf` into `public/`. Those outputs are
-generated, so they are gitignored — `info.pdf` is the source of truth.
+The portrait and downloadable CV are committed in `public/`, so local dev and
+Vercel builds do not need to extract assets on every run. If `info.pdf` changes,
+run `npm run extract:avatar` and commit the regenerated public assets.
 
 ### Scripts
 
@@ -57,8 +57,9 @@ grayscale `/SMask` holding its alpha. Decoding the JPEG to bake the alpha in
 would need an image library, so `extract-avatar.mjs` emits the JPEG untouched
 alongside the mask as an RGBA PNG (mask value in the _alpha_ channel, because
 CSS `mask-image` treats an alpha-less image as fully opaque). `Hero` recombines
-them with `mask-image`. Both files are 809×1080 and are rendered into the same
-box at `100% 100%`, so they line up by construction.
+the committed `public/avatar.jpg` and `public/avatar-mask.png` with
+`mask-image`. Both files are 809×1080 and are rendered into the same box at
+`100% 100%`, so they line up by construction.
 
 **Motion and accessibility.** Animated elements are pre-hidden by CSS gated
 behind a `.js` class that an inline script adds before first paint — with JS

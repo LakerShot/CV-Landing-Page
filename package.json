@@ -4,9 +4,7 @@
   "private": true,
   "description": "Animated bilingual CV landing page for Egor Morozov, Frontend Developer",
   "scripts": {
-    "predev": "node scripts/extract-avatar.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/extract-avatar.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
