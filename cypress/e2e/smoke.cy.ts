@@ -27,7 +27,7 @@ describe('landing page', () => {
   });
 
   it('lists all four employers and the mentoring entry', () => {
-    ['Salmon', 'Reelmotion Games', 'Crimtan', 'Java Mentor'].forEach((company) => {
+    ['Salmon', 'RMG', 'Crimtan', 'Java Mentor'].forEach((company) => {
       cy.contains('section#experience', company).should('exist');
     });
     cy.contains('section#mentoring', 'Kata Academy').should('exist');

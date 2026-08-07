@@ -118,6 +118,7 @@ export function TimelineItem({
             muted
             playsInline
             preload="metadata"
+            poster={media.poster}
             aria-label={title}
           >
             <source src={media.src} type={media.type} />

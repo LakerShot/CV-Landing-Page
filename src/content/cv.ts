@@ -146,6 +146,7 @@ export type ExperienceItem = {
         kind: 'video';
         src: string;
         type: string;
+        poster?: string;
       }
     | {
         kind: 'image';
@@ -169,8 +170,9 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
     website: 'https://salmon.ph',
     media: {
       kind: 'video',
-      src: '/videos/salmon-redesign.mov',
-      type: 'video/quicktime',
+      src: '/videos/salmon-redesign.mp4',
+      type: 'video/mp4',
+      poster: '/images/salmon-preview.jpg',
     },
     tags: [
       { label: 'React', tone: 'react' },
@@ -183,12 +185,12 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   },
   {
     id: 'reelmotion',
-    company: 'Reelmotion Games',
+    company: 'RMG',
     website: 'http://reelmotion.games/',
     media: {
       kind: 'image',
       src: '/images/rmg.jpg',
-      alt: 'Reelmotion Games brand artwork',
+      alt: 'RMG brand artwork',
       width: 2048,
       height: 1228,
     },
@@ -220,7 +222,14 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
   {
     id: 'javaMentor',
     company: 'Java Mentor',
-    websiteUnavailable: true,
+    website: 'https://javalearn.online/',
+    media: {
+      kind: 'image',
+      src: '/images/javamentor.png',
+      alt: 'Java Mentor brand artwork',
+      width: 2400,
+      height: 1350,
+    },
     tags: [
       { label: 'React', tone: 'react' },
       { label: 'Education', tone: 'neutral' },
