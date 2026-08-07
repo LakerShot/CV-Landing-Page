@@ -1,7 +1,8 @@
+import Image from 'next/image';
 import { ExternalLink, MapPin } from 'lucide-react';
 import { TechTag } from './TechTag';
 import { cn } from '@/lib/cn';
-import type { WorkTag } from '@/content/cv';
+import type { ExperienceItem, WorkTag } from '@/content/cv';
 
 type TimelineItemProps = {
   title: string;
@@ -13,10 +14,7 @@ type TimelineItemProps = {
   location?: string;
   description: React.ReactNode;
   tags?: readonly WorkTag[];
-  media?: {
-    src: string;
-    type: string;
-  };
+  media?: ExperienceItem['media'];
   /** Marks the entry as ongoing: the node gets a pulsing gold halo. */
   current?: boolean;
   className?: string;
@@ -112,7 +110,7 @@ export function TimelineItem({
 
         <p className="text-fluid-sm leading-relaxed text-ink-muted">{description}</p>
 
-        {media && (
+        {media?.kind === 'video' && (
           <video
             className="mt-6 aspect-video w-full rounded-lg border border-hairline bg-canvas object-cover"
             autoPlay
@@ -124,6 +122,17 @@ export function TimelineItem({
           >
             <source src={media.src} type={media.type} />
           </video>
+        )}
+
+        {media?.kind === 'image' && (
+          <Image
+            src={media.src}
+            alt={media.alt}
+            width={media.width}
+            height={media.height}
+            sizes="(max-width: 1024px) calc(100vw - 4rem), 56rem"
+            className="mt-6 aspect-video w-full rounded-lg border border-hairline bg-canvas object-cover"
+          />
         )}
       </article>
     </li>

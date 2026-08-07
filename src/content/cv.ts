@@ -141,10 +141,19 @@ export type ExperienceItem = {
   company: string;
   website?: string;
   websiteUnavailable?: boolean;
-  media?: {
-    src: string;
-    type: string;
-  };
+  media?:
+    | {
+        kind: 'video';
+        src: string;
+        type: string;
+      }
+    | {
+        kind: 'image';
+        src: string;
+        alt: string;
+        width: number;
+        height: number;
+      };
   tags: readonly WorkTag[];
   /** ISO start date, used only for ordering and machine-readable markup. */
   start: string;
@@ -159,6 +168,7 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
     company: 'Salmon',
     website: 'https://salmon.ph',
     media: {
+      kind: 'video',
       src: '/videos/salmon-redesign.mov',
       type: 'video/quicktime',
     },
@@ -175,6 +185,13 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
     id: 'reelmotion',
     company: 'Reelmotion Games',
     website: 'http://reelmotion.games/',
+    media: {
+      kind: 'image',
+      src: '/images/rmg.jpg',
+      alt: 'Reelmotion Games brand artwork',
+      width: 2048,
+      height: 1228,
+    },
     tags: [
       { label: 'Vue', tone: 'vue' },
       { label: 'BTC', tone: 'neutral' },
@@ -186,6 +203,13 @@ export const EXPERIENCE: readonly ExperienceItem[] = [
     id: 'crimtan',
     company: 'Crimtan',
     website: 'https://crimtan.com/',
+    media: {
+      kind: 'image',
+      src: '/images/crimtan.jpeg',
+      alt: 'Crimtan sponsor screen at an industry event',
+      width: 2048,
+      height: 1365,
+    },
     tags: [
       { label: 'Angular', tone: 'angular' },
       { label: 'B2B', tone: 'neutral' },
@@ -212,6 +236,13 @@ export const MENTORING: readonly ExperienceItem[] = [
   {
     id: 'kata',
     company: 'Kata Academy',
+    media: {
+      kind: 'image',
+      src: '/images/kata.webp',
+      alt: 'Kata Academy team photo',
+      width: 1680,
+      height: 1118,
+    },
     tags: [{ label: 'React', tone: 'react' }],
     start: '2021-01-01',
     end: '2022-12-01',

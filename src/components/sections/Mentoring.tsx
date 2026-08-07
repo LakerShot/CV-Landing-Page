@@ -25,6 +25,7 @@ export function Mentoring() {
               meta={`${t(`items.${item.id}.arrangement`)} · ${t(`items.${item.id}.duration`)}`}
               description={t(`items.${item.id}.description`)}
               tags={item.tags}
+              media={item.media}
             />
           ))}
         </Timeline>
