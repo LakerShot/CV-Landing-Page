@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { locales, localeNames, type Locale } from '@/i18n/routing';
+import { ScrollTrigger } from '@/animation/gsap';
 import { cn } from '@/lib/cn';
 
 /**
@@ -38,7 +39,20 @@ export function LocaleSwitcher({ className }: { className?: string }) {
             aria-current={isActive ? 'true' : undefined}
             aria-label={t('switchTo', { language: localeNames[locale] })}
             onClick={() => {
-              if (!isActive) router.replace(pathname, { locale });
+              if (isActive) return;
+
+              /*
+               * Locale switches remount the whole page (a different static
+               * route under `[locale]`), so every section's ScrollTriggers get
+               * killed and recreated at once. GSAP processes a kill lazily, so
+               * without this the new page's triggers can be created while a
+               * just-killed one is still mid-teardown, and ScrollTrigger's
+               * internal refresh throws on its half-cleared state. Killing
+               * everything up front, before navigation even starts, avoids
+               * the race.
+               */
+              ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+              router.replace(pathname, { locale });
             }}
             className={cn(
               'rounded-full px-3 py-1 text-xs font-semibold tracking-[0.08em] transition-colors duration-300',
